@@ -29,9 +29,14 @@ public class Windowsdemo {
 	    
 	    for(String windowhandle : windowhandles) {
 	    	driver.switchTo().window(windowhandle);
-//	    	WebElement text = driver.findElement(By.xpath("//*[@id=\"sampleHeading\"]"));
-	    	System.out.println("Text message is : " + driver.getTitle());
 	    }
+	    WebElement newWindowtab = driver.findElement(By.id("sampleHeading"));
+	    System.out.println("Text message is : " + newWindowtab.getText());
+	    
+	    driver.close();
+	    driver.switchTo().window(windowhandles.iterator().next());
+	    
+	     
 	}
 
 }
